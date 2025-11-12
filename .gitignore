@@ -32,6 +32,11 @@ desktop.ini
 # Model files (optional - uncomment if too large)
 # backend/model/best_model.pth
 
+# Dataset and training files
+backend/data/
+backend/model/checkpoint_*.pth
+backend/model/training_history.json
+
 # Env files
 .env
 .env.local
