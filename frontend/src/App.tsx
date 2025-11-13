@@ -7,9 +7,18 @@ import type { Prediction } from './types/Prediction'
 function App() {
   const [result, setResult] = useState<Prediction | null>(null)
   const [previewUrl, setPreviewUrl] = useState<string | undefined>(undefined)
+  const [darkMode, setDarkMode] = useState(false)
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${darkMode ? 'dark' : ''}`}>
+      {/* Dark Mode Toggle */}
+      <button 
+        className="dark-toggle"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
+      </button>
+
       <header className="app-header">
         <div className="app-emoji">🥗🍕🥑</div>
         <h1 className="app-title">Food Health Classifier</h1>
